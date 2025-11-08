@@ -1,0 +1,178 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo geral */
+body {
+  font-family: Georgia, serif;
+  line-height: 1.6;
+  background: #f4f4f4;
+  color: #333;
+  padding-top: 60px; /* espaço pro menu fixo */
+}
+
+/* Navbar */
+header {
+  background: #1a1e29;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+.logo {
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #01c38e;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #01c38e;
+}
+
+/* Botão hamburguer (mobile) */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* Conteúdo */
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+}
+
+main article img.foto-grande {
+  display: block !important;
+  width: 600px !important;
+  height: auto !important;
+  margin: 30px auto !important;
+  border: 3px solid #01c38e !important;
+  border-radius: 12px !important;
+  object-fit: cover !important;
+  max-width: 100% !important;
+}
+
+.foto {
+  display: block;
+  margin: 20px auto;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #01c38e;
+}
+
+.foto-grande {
+  display: block !important;
+  width: 600px !important;
+  height: auto !important;
+  margin: 30px auto !important;
+  border: 3px solid #01c38e !important;
+  border-radius: 12px !important;
+  object-fit: cover !important;
+  max-width: 100% !important;
+}
+
+.foto-grande {
+  display: block;
+  width: 600px;
+  height: auto;
+  margin: 30px auto;
+  border: 3px solid #01c38e;
+  border-radius: 12px;
+  object-fit: cover;
+  max-width: 100%;
+}
+
+img.foto {
+  max-width: 100%;
+  height: auto;
+}
+
+.img-pequena {
+  width: 120px !important;
+  height: auto !important;
+  float: left !important;
+  margin: 5px 20px 20px 0 !important;
+  border: 3px solid #01c38e !important;
+  border-radius: 8px !important;
+  object-fit: cover !important;
+  clear: both !important;
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+  background: #1a1e29;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 8px 8px 0 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #1a1e29;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 15px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* Estilo para imagens grandes - Adicionado ao final para maior prioridade */
+.foto-grande {
+  display: block !important;
+  width: 600px !important;
+  height: auto !important;
+  margin: 30px auto !important;
+  border: 3px solid #01c38e !important;
+  border-radius: 12px !important;
+  object-fit: cover !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
