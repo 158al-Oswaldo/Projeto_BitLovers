@@ -1,0 +1,241 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ------------------------------------- */
+/* DROP DOWN STYLES (DESKTOP - HOVER)    */
+/* ------------------------------------- */
+
+li.dropdown {
+    position: relative;
+}
+
+/* CORREÇÃO APLICADA: Uso de seletor mais específico para garantir o 'display: none' */
+.nav-links .dropdown-menu {
+    /* Estado Padrão: Oculto e Absoluto */
+    display: none; 
+    position: absolute;
+    background-color: #2a2e39;
+    top: 100%;
+    left: 0;
+    width: 200px;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 1000; 
+}
+
+/* Exibir o menu ao passar o mouse (Efeito Desktop) */
+li.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 12px 20px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #ffffff;
+    color: #1a1e29;
+}
+
+/* ------------------------------------- */
+/* ESTILO GERAL                          */
+/* ------------------------------------- */
+
+body {
+    font-family: Georgia, serif;
+    line-height: 1.6;
+    background: #f4f4f4;
+    color: #333;
+    padding-top: 60px; /* espaço pro menu fixo */
+}
+
+/* Navbar */
+header {
+    background: #1a1e29;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    position: relative;
+}
+
+.logo {
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #01c38e;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    overflow: visible;
+    align-items: center;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+    display: block;
+}
+
+.nav-links li a:hover {
+    color: #01c38e;
+}
+
+.dropdown-toggle {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+    display: block;
+    cursor: pointer;
+}
+
+.dropdown-toggle:hover {
+    color: #01c38e;
+}
+
+/* Botão hamburguer (mobile) */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #fff;
+}
+
+/* Conteúdo */
+main {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+}
+
+/* Estilos de Imagens */
+main article img.foto-grande, .foto-grande {
+    display: block !important;
+    width: 600px !important;
+    height: auto !important;
+    margin: 30px auto !important;
+    border: 3px solid #01c38e !important;
+    border-radius: 12px !important;
+    object-fit: cover !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.foto {
+    display: block;
+    margin: 20px auto;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #01c38e;
+}
+
+img.foto {
+    max-width: 100%;
+    height: auto;
+}
+
+.img-pequena {
+    width: 120px !important;
+    height: auto !important;
+    float: left !important;
+    margin: 5px 20px 20px 0 !important;
+    border: 3px solid #01c38e !important;
+    border-radius: 8px !important;
+    object-fit: cover !important;
+    clear: both !important;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    background: #1a1e29;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 8px 8px 0 0;
+}
+
+/* ------------------------------------- */
+/* RESPONSIVIDADE (MOBILE - CLICK/ACTIVE)*/
+/* ------------------------------------- */
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #1a1e29;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 15px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* DROPDOWN CORRIGIDO PARA MOBILE */
+    .dropdown-menu {
+        position: static; 
+        display: none !important; 
+        background-color: #2a2e39;
+        box-shadow: none;
+        border-radius: 0;
+        width: 100%;
+        min-width: auto;
+        padding-left: 10px;
+    }
+    
+    /* Mostrar o dropdown quando a classe 'open' for adicionada pelo JavaScript */
+    .dropdown-menu.open {
+        display: block !important;
+    }
+
+    /* Desabilita o hover no mobile */
+    .dropdown:hover .dropdown-menu {
+        display: none !important;
+    }
+
+    /* Ajuste de padding para links do dropdown no mobile */
+    .dropdown-menu li a {
+        padding-left: 30px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
